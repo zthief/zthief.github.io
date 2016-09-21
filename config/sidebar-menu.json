@@ -1,0 +1,11 @@
+[
+  {
+    "text": "主菜单",
+    "heading": "true"
+  },
+  {
+    "text": "控制台",
+    "sref": "admin.dashboard",
+    "icon": "fa fa-dashboard"
+  }
+]

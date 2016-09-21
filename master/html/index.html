@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN" data-ng-app="Seed">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Cache-Control" content="no-cache"/>
+        <meta http-equiv="Expires" content="0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="{{app.description}}">
+        <meta name="keywords" content="angular, seed project">
+        <title data-ng-bind="::pageTitle()">Seed</title>
+        <!-- Bootstrap styles-->
+        <link rel="stylesheet" href="app/css/bootstrap.css">
+        <!-- Application styles-->
+        <link rel="stylesheet" href="app/css/app.css">
+        <link rel="stylesheet" href="app/css/app-backend.css" data-ng-if="$state.current.name.indexOf('admin')>-1">
+        <link rel="stylesheet" href="app/css/app-frontend.css" data-ng-if="$state.current.name.indexOf('home')>-1">
+        <link rel="stylesheet" href="app/css/app-singlepage.css" data-ng-if="$state.current.name.indexOf('page')>-1">
+        <!-- Themes-->
+        <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
+    </head>
+
+    <body
+        data-ng-class="{
+            'layout-fixed' : app.layout.isFixed,
+            'aside-collapsed' : app.layout.isCollapsed,
+            'layout-boxed' : app.layout.isBoxed,
+            'layout-fs': app.useFullLayout,
+            'hidden-footer': app.hiddenFooter,
+            'layout-h': app.layout.horizontal,
+            'aside-float': app.layout.isFloat,
+            'offsidebar-open': app.offsidebarOpen,
+            'aside-toggled': app.asideToggled
+        }">
+        <div data-preloader></div>
+        <div data-ui-view="" data-autoscroll="false" class="wrapper"></div>
+        <script src="app/js/base.js"></script>
+        <script src="app/js/app.js"></script>
+    </body>
+
+</html>

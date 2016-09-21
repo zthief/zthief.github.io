@@ -1,0 +1,84 @@
+{
+    "photo": "./app/img/kid.jpg",
+    "name": "zthief",
+    "position": "web前端工程师",
+    "company": "苏州麦迪斯顿医疗科技股份有限公司",
+    "assessments": [
+        "张玉战，男，26岁，武汉大学-计算机科学与技术专业，4年医疗软件行业工作经验，熟练掌握从后台到前端各项技术EF/.net MVC/Web API/AngularJS/Bootstrap等，目前主攻方向在Web前端，有自己的前端种子工程（AngularJS+BootStrap），并成功在公司内推广。",
+        "有丰富项目的经验，参与负责过多家医院的项目上线，如中医药大学第一附属医院、中山大学附 属第三医院、武汉光谷同济医院、河南省人民医院等。"
+    ],
+    "education": {
+        "university": "武汉大学",
+        "qualification": "本科",
+        "major": "计算机科学与技术",
+        "from": "2008/09",
+        "to": "2012/07"
+    },
+    "works": [{
+        "company": "苏州麦迪斯顿医疗科技股份有限公司",
+        "position": "Web前端工程师/.Net研发工程师",
+        "from": "2014/07",
+        "to": "至今"
+    }, {
+        "company": "广州惠侨计算机科技有限公司 ",
+        "position": "delphi研发工程师",
+        "from": "2012/07",
+        "to": "2014/07"
+    }],
+    "projects": [{
+        "name": "版本发布系统",
+        "description": "建立公司内部使用的版本管理平台，方便公司开发和现场实施对软件及硬件驱动的管理，以及图文反馈。",
+        "dutys": [
+            "负责带领小组设计整个系统的架构，攻克技术点。",
+            "负责服务端及前端框架部分的开发。",
+            "负责前端论坛部分的开发。"
+        ],
+        "point": ".Net/SqlServer/EF/WebAPI/AngularJS/Bootstrap",
+        "company": "苏州麦迪斯顿医疗科技股份有限公司 ",
+        "from": "2016/07",
+        "to": "2016/08"
+    }, {
+        "name": "河南省人民医院分级诊疗平台",
+        "description": "建立以河南省人民医院为中心、县级医院为网点的分级诊疗平台，同时需要接入公司现有 麻醉、急诊及数字化手术室系统。",
+        "dutys": [
+            "负责平台Web端的全部功能开发，包括调度中心、系统运维、电子病历等。",
+            "负责重新设计项目的权限模块并进行整合。",
+            "负责网点医院服务端 WEBAPI 的开发。"
+        ],
+        "point": ".Net/Oracle/EF/WebAPI/JQuery/AngularJS/Bootstrap",
+        "company": "苏州麦迪斯顿医疗科技股份有限公司 ",
+        "from": "2015/11",
+        "to": "2016/01"
+    }, {
+        "name": "数字化手术室 V4",
+        "description": "以音视频等多种形式记录患者围术期内所有数据，并在围术期后模拟 还原围术期情况。提供手术期间手术室与外界的音视频交互，提供手术的观摩学习，提 供手术后的录像教学。",
+        "dutys": [
+            "负责手术客户端电子病历组件开发。",
+            "负责Web端的全部功能开发。",
+            "负责部分服务端WEBAPI的开发。",
+            "后期负责将前端框架由JQuery/EasyUI升级至AngularJS/Bootstrap。"
+        ],
+        "point": ".Net/Oracle/EF/WebAPI/JQuery/AngularJS/Bootstrap",
+        "company": "苏州麦迪斯顿医疗科技股份有限公司 ",
+        "from": "2014/10",
+        "to": "2015/02"
+    }, {
+        "name": "广州中医药大学第一附属医院门诊系统升级",
+        "description": "升级广州中医药大学第一附属医院门诊系统，并在升级期间提供原有系统的维护。将系统由C/S架构升级为C/S/S架构，增加中间层以减少数据服务器压力，同时将数据库由SQLSERVER切换为ORACLE。",
+        "dutys": [
+            "负责升级前的BUG处理及现场系统维护。",
+            "负责挂号、医生站、护士站三个客户端的升级。",
+            "负责部分中间层的开发。",
+            "负责周边功能的开发。"
+        ],
+        "point": "Delphi/SqlServer/Oracle/WebService",
+        "company": "广州惠侨计算机科技有限公司 ",
+        "from": "2012/07",
+        "to": "2014/03"
+    }],
+    "contact": {
+        "email": "zyz-thief@163.com",
+        "tel": "18818900121",
+        "qq": "1285525973"
+    }
+}

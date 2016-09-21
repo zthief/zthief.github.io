@@ -1,0 +1,26 @@
+<div class="block-center mt-xl wd-xxl">
+    <!-- START panel-->
+    <div class="panel panel-flat">
+        <div class="panel-heading text-center">
+            <h1 class="text-center">404</h1>
+            <p>
+                找不到这个页面
+            </p>
+        </div>
+        <div class="panel-body text-center">
+            <a><img src="./app/img/logo-large.png" alt="Image" class="block-center img-rounded"/></a>
+            <div class="p-lg text-center">
+                <ul class="list-inline text-center text-sm mb-xl">
+                    <li>
+                        <a href="" ui-sref="home.welcome" class="text-muted">返回首页</a>
+                    </li>
+                </ul>
+                <span>
+                    <i class="fa fa-copyright"></i>{{app.year}} - {{app.author}}</span>
+                <br/>
+                <span ng-bind="app.description"></span>
+            </div>
+        </div>
+    </div>
+    <!-- END panel-->
+</div>

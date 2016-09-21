@@ -1,0 +1,43 @@
+/* ========================================================================
+   Component: pagination.less
+ ========================================================================== */
+//
+// pagination
+//
+.page-list .page-total {}
+.page-list .page-total input,
+.page-list .page-total select {
+    height: 26px;
+    border: 1px solid #ddd;
+}
+.page-list .page-total input {
+    width: 40px;
+    padding-left: 3px;
+}
+.page-list {
+    .pagination {
+        float: right;
+        margin-top: -5px;
+        span {
+            cursor: pointer;
+        }
+        .separate {
+            span:hover {
+                background: none;
+            }
+        }
+    }
+    .page-total {
+        float: left;
+        select {
+            height: 26px;
+            border: 1px solid #ddd;
+        }
+        input {
+            height: 26px;
+            border: 1px solid #ddd;
+            width: 40px;
+            padding-left: 3px;
+        }
+    }
+}

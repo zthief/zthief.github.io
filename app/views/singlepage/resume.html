@@ -1,0 +1,164 @@
+<header class="navbar navbar-default navbar-fixed-top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <a ng-click="ScrollToAnchor('base-info')" class="navbar-brand">{{resume.data.name}}</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ng-click="ScrollToAnchor('self-assessment')">简介</a>
+                </li>
+                <li>
+                    <a ng-click="ScrollToAnchor('education-experience')">学历</a>
+                </li>
+                <li>
+                    <a ng-click="ScrollToAnchor('work-experience')">工作经历</a>
+                </li>
+                <li>
+                    <a ng-click="ScrollToAnchor('project-experience')">项目经验</a>
+                </li>
+                <li>
+                    <a ng-click="ScrollToAnchor('contact-me')">联系我</a>
+                </li>
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right">
+                <li class="visible-lg">
+                    <a role="button" ui-sref="home.welcome" title="前台页面">
+                        <em class="fa fa-home">
+                        </em>&nbsp;前台
+                    </a>
+                </li>
+                <li class="visible-lg">
+                    <a role="button" ui-sref="admin.dashboard"  title="后台页面">
+                        <em class="fa fa-cogs">
+                        </em>&nbsp;后台
+                    </a>
+                </li>
+            </ul> -->
+        </nav>
+    </div>
+</header>
+<section class="base-info">
+    <a id="base-info" class="target-fix"></a>
+    <div class="container">
+        <a class="animated tada">
+            <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail head-portrait">
+        </a>
+        <h1>zthief</h1>
+        <p>
+            {{resume.data.position}} | {{resume.data.company}}
+        </p>
+    </div>
+</section>
+<section class="self-assessment">
+    <a id="self-assessment" class="target-fix"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h2>简介</h2>
+            </div>
+            <div class="col-md-8">
+                <p ng-repeat="item in resume.data.assessments">
+                    {{item}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<hr/>
+<section class="education-experience">
+    <a id="education-experience" class="target-fix"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h2>学历</h2>
+            </div>
+            <div class="col-md-8">
+                <h3>{{resume.data.education.university}}
+                    <br/>
+                    <small>{{resume.data.education.qualification}} | {{resume.data.education.major}}</small>
+                </h3>
+            </div>
+            <div class="col-md-2">
+                <small>{{resume.data.education.from}}-{{resume.data.education.to}}</small>
+            </div>
+        </div>
+    </div>
+</section>
+<hr/>
+<section class="work-experience" name="work-experience" id="work-experience">
+    <a id="work-experience" class="target-fix"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h2>工作经历</h2>
+            </div>
+            <hr ng-repeat-start="item in resume.data.works" ng-show="$index" />
+            <div class="col-md-8" ng-class="{'col-md-offset-2': $index > 0}">
+                <h3>{{item.company}}
+                    <br/>
+                    <small>{{item.position}}</small>
+                </h3>
+            </div>
+            <div class="col-md-2" ng-repeat-end>
+                <small>{{item.from}}-{{item.to}}</small>
+            </div>
+        </div>
+    </div>
+</section>
+<hr />
+<section class="project-experience">
+    <a id="project-experience" class="target-fix"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h2>项目经验</h2>
+            </div>
+            <hr ng-repeat-start="item in resume.data.projects" ng-show="$index" />
+            <div class="col-md-8" ng-class="{'col-md-offset-2': $index > 0}">
+                <h3>{{item.name}}</h3>
+                <p>
+                    <b>项目描述：</b>
+                    <br/>{{item.description}}
+                </p>
+                <p>
+                    <b>项目职责：</b>
+                    <p ng-repeat="duty in item.dutys">{{duty}}</p>
+                </p>
+                <p>
+                    <b>技术要点：</b>
+                    <br/>{{item.point}}
+                </p>
+            </div>
+            <div class="col-md-2" ng-repeat-end>
+                {{item.company}}
+                <br/>
+                <small>{{item.from}}-{{item.to}}</small>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="contact-me">
+    <a id="contact-me" class="target-fix"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h2>联系方式</h5>
+            </div>
+            <div class="col-md-8">
+                <p>
+                    邮箱：
+                    <br/>{{resume.data.contact.email}}
+                </p>
+                <p>
+                    手机：
+                    <br/>{{resume.data.contact.tel}}
+                </p>
+                <p>
+                    QQ/微信：
+                    <br/>{{resume.data.contact.qq}}
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>

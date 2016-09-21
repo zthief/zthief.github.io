@@ -1,0 +1,9 @@
+<!-- top navbar-->
+<header ng-include="'app/views/frontend/partials/top-navbar.html'" class="topnavbar-wrapper"></header>
+<!-- offsidebar-->
+<aside ng-include="'app/views/partials/offsidebar.html'" class="offsidebar"></aside>
+<!-- Main section-->
+<section>
+    <!-- Page content-->
+    <div ui-view="" autoscroll="false" ng-class="app.viewAnimation"></div>
+</section>
