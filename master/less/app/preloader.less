@@ -2,9 +2,9 @@
    Component: preloader.less
  ========================================================================== */
 
-@preloader-bg:  whitesmoke;
-@preloader-wd:  312px;
-@preloader-hg:  89px;
+@preloader-bg:  #6f5499;
+@preloader-wd:  181px;
+@preloader-hg:  181px;
 /*@noflip*/
 .preloader {
   position: fixed;
@@ -20,7 +20,7 @@
   background-image:      -o-linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* Opera 11.10+ */
   background-image:         linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* W3C */
   z-index: 9999;
-  .transition(opacity .65s);
+  .transition(opacity 1s);
 }
 /*@noflip*/
 .preloader-progress {
@@ -28,24 +28,13 @@
   top: 0; left: 0; bottom: 0; right: 0;
   width: @preloader-wd;
   height: @preloader-hg;
-  margin: auto;
-  overflow: auto;
-  background-image: url(../img/preloader.empty.png);
-  background-size: @preloader-wd @preloader-hg;
-}
-/*@noflip*/
-.preloader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  min-width: 10px;
-  background-image: url(../img/preloader.full.png);
-  background-size: @preloader-wd @preloader-hg;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .preloader-hidden {
-  display: none;
+    display: none;
 }
 
 // ngAnimate behavior
@@ -53,7 +42,7 @@
   opacity: 1;
   display: block;
   .preloader-progress {
-    .transition-transform(.4s ease);
+    .transition-transform(1s ease);
     .scale(0);
   }
 }

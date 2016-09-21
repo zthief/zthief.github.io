@@ -11,9 +11,8 @@
 
         var directive = {
             restrict: 'EAC',
-            template: '<div class="preloader-progress">' +
-                '<div class="preloader-progress-bar" ' +
-                'ng-style="{width: loadCounter + \'%\'}"></div>' +
+            template: '<div class="preloader-progress animated" ng-class="animate">' +
+                '<img ng-src="./app/img/kid.png" class="img-circle img-thumbnail" />' +
                 '</div>',
             link: link
         };
@@ -22,45 +21,55 @@
         ///////
 
         function link(scope, el) {
-
             scope.loadCounter = 0;
 
-            var counter = 0,
-                timeout;
+            var animates = [
+                'tada',
+                'bounceInRight',
+                'pulse',
+                'rubberBand',
+                'tada',
+                'jello',
+                'bounceInRight',
+                'flip',
+                'flipInY',
+                'lightSpeedIn'
+            ];
 
+            scope.animate = animates[Math.ceil(Math.random()*(animates.length-1))];
             // disables scrollbar
-            angular.element('body').css('overflow', 'hidden');
+            // angular.element('body').css('overflow', 'auto');
             // ensure class is present for styling
             el.addClass('preloader');
 
             appReady().then(endCounter);
 
-            timeout = $timeout(startCounter);
-
-            ///////
-
-            function startCounter() {
-
-                var remaining = 100 - counter;
-                counter = counter + (0.015 * Math.pow(1 - Math.sqrt(remaining), 2));
-
-                scope.loadCounter = parseInt(counter, 10);
-
-                timeout = $timeout(startCounter, 20);
-            }
+            // timeout = $timeout(startCounter);
+            //
+            // ///////
+            //
+            // function startCounter() {
+            //
+            //     var remaining = 100 - counter;
+            //     counter = counter + (0.015 * Math.pow(1 - Math.sqrt(remaining), 2));
+            //
+            //     scope.loadCounter = parseInt(counter, 10);
+            //
+            //     timeout = $timeout(startCounter, 20);
+            // }
 
             function endCounter() {
 
-                $timeout.cancel(timeout);
-
-                scope.loadCounter = 100;
+                // $timeout.cancel(timeout);
+                //
+                // scope.loadCounter = 100;
 
                 $timeout(function() {
                     // animate preloader hiding
                     $animate.addClass(el, 'preloader-hidden');
                     // retore scrollbar
                     angular.element('body').css('overflow', '');
-                }, 100);
+                }, 300);
             }
 
             function appReady() {

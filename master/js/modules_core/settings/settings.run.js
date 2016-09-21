@@ -24,7 +24,7 @@
                 horizontal: false,
                 isFloat: false,
                 asideHover: false,
-                theme: 'app/css/theme-a.css'
+                theme: 'app/css/theme-c.css'
             },
             useFullLayout: false,
             hiddenFooter: false,

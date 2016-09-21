@@ -22,13 +22,13 @@
 
     function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         $locationProvider.html5Mode(false);
-        $urlRouterProvider.otherwise('/home/welcome');
+        $urlRouterProvider.otherwise('/page/resume');
         $stateProvider
             .state('page', {
                 url: '/page',
                 abstract: true,
                 templateUrl: helper.basepath('singlepage.html'),
-                resolve: helper.resolveFor('icons', 'animate'),
+                resolve: helper.resolveFor('icons', 'animo', 'animate'),
                 controller: ['$rootScope', function($rootScope) {
                     $rootScope.app.layout.horizontal = true;
                 }]

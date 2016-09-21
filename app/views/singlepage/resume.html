@@ -41,10 +41,8 @@
 <section class="base-info">
     <a id="base-info" class="target-fix"></a>
     <div class="container">
-        <a class="animated tada">
-            <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail head-portrait">
-        </a>
-        <h1>zthief</h1>
+        <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail" />
+        <h1>{{resume.data.name}}</h1>
         <p>
             {{resume.data.position}} | {{resume.data.company}}
         </p>
