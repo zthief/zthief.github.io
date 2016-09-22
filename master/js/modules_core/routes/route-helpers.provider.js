@@ -20,7 +20,7 @@
         };
 
         function basepath(uri) {
-            return 'app/views/' + uri + '?timestamp=' + new Date();
+            return 'app/views/' + uri;
         }
 
         function resolveFor() {
