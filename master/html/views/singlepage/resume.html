@@ -1,43 +1,41 @@
-<header class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <a ng-click="ScrollToAnchor('base-info')" class="navbar-brand">{{resume.data.name}}</a>
-        </div>
-        <nav id="bs-navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a ng-click="ScrollToAnchor('self-assessment')">简介</a>
-                </li>
-                <li>
-                    <a ng-click="ScrollToAnchor('education-experience')">学历</a>
-                </li>
-                <li>
-                    <a ng-click="ScrollToAnchor('work-experience')">工作经历</a>
-                </li>
-                <li>
-                    <a ng-click="ScrollToAnchor('project-experience')">项目经验</a>
-                </li>
-                <li>
-                    <a ng-click="ScrollToAnchor('contact-me')">联系我</a>
-                </li>
-            </ul>
-            <!-- <ul class="nav navbar-nav navbar-right">
-                <li class="visible-lg">
-                    <a role="button" ui-sref="home.welcome" title="前台页面">
-                        <em class="fa fa-home">
-                        </em>&nbsp;前台
-                    </a>
-                </li>
-                <li class="visible-lg">
-                    <a role="button" ui-sref="admin.dashboard"  title="后台页面">
-                        <em class="fa fa-cogs">
-                        </em>&nbsp;后台
-                    </a>
-                </li>
-            </ul> -->
-        </nav>
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand">{{resume.data.name}}</a>
     </div>
-</header>
+    <div class="nav-wrapper">
+        <ul class="nav navbar-nav">
+            <li>
+                <a ng-click="ScrollToAnchor('base-info')">简介</a>
+            </li>
+            <li>
+                <a ng-click="ScrollToAnchor('education-experience')">学历</a>
+            </li>
+            <li>
+                <a ng-click="ScrollToAnchor('work-experience')">工作经历</a>
+            </li>
+            <li>
+                <a ng-click="ScrollToAnchor('project-experience')">项目经验</a>
+            </li>
+            <li>
+                <a ng-click="ScrollToAnchor('contact-me')">联系我</a>
+            </li>
+        </ul>
+        <!-- <ul class="nav navbar-nav navbar-right">
+            <li class="visible-lg">
+                <a role="button" ui-sref="home.welcome" title="前台页面">
+                    <em class="fa fa-home">
+                    </em>&nbsp;前台
+                </a>
+            </li>
+            <li class="visible-lg">
+                <a role="button" ui-sref="admin.dashboard"  title="后台页面">
+                    <em class="fa fa-cogs">
+                    </em>&nbsp;后台
+                </a>
+            </li>
+        </ul> -->
+    </div>
+</nav>
 <section class="base-info">
     <a id="base-info" class="target-fix"></a>
     <div class="container">

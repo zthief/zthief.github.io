@@ -27,6 +27,11 @@ hr {
 .navbar-fixed-top{
     border-width: 0 0 0px;
 }
+.nav-wrapper{
+    position: relative;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    z-index: 10;
+}
 .base-info, .work-experience, .education-experience, .project-experience, .self-assessment {
     position: relative;
     padding: 70px 0 20px;

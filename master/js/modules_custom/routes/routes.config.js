@@ -22,7 +22,8 @@
 
     function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         $locationProvider.html5Mode(false);
-        $urlRouterProvider.otherwise('/page/resume');
+        $urlRouterProvider.when('','/page/resume');
+        $urlRouterProvider.otherwise('/page/notfound');        
         $stateProvider
             .state('page', {
                 url: '/page',

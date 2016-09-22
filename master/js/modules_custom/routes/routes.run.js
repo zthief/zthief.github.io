@@ -42,10 +42,5 @@
             function(event, toState, toParams, fromState, fromParams, error) {
                 console.log(error);
             });
-
-        $rootScope.$on('$stateNotFound',
-            function() {
-                $state.go('page.notfound');
-            });
     }
 })();

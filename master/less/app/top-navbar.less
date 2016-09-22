@@ -1,9 +1,9 @@
 /* ========================================================================
    Component: top-navbar.less
  ========================================================================== */
- 
+
 //
-// Horizontal top navbar 
+// Horizontal top navbar
 // based on the bootstrap navbar styles and markup
 // ----------------------------------------------------
 
@@ -61,29 +61,29 @@
     position: relative;
     // overlaps nav-wrapper
     z-index: 11;
-    
+
     // Reset default to allow handle via different logo size
     .navbar-brand {
       padding: 0;
     }
-    
+
     // Different Logo size depends on the navbar state
     .brand-logo,
-    .brand-logo-collapsed { 
+    .brand-logo-collapsed {
       > img {
         margin: 0 auto;
       }
     }
-    .brand-logo { 
-      display: block; 
-      padding: 10px 15px;
+    .brand-logo {
+      display: block;
+      padding: 5px 15px;
     }
-    .brand-logo-collapsed { 
-      display: none; 
-      padding: 6px 15px;
+    .brand-logo-collapsed {
+      display: none;
+      padding: 5px 10px;
     }
   }
-  
+
   .navbar-nav > li > a,
   .navbar-nav > .open > a {
     color: @nav-top-item-mobile;
@@ -116,7 +116,7 @@
       color: @nav-top-item-desktop;
     }
   }
-  
+
 }
 
 @media @upto-tablet {
@@ -148,7 +148,7 @@
     position: static;
     float: left;
   }
-  
+
   // fullwidth dropdowns
   .navbar-nav .open .dropdown-menu {
     position: absolute;
@@ -163,7 +163,7 @@
 // Navbar Search Form
 // ------------------------------
 .topnavbar {
-  
+
   .navbar-form {
     position: absolute;
     top: -100%;
@@ -208,7 +208,7 @@
   @media @tablet {
     .navbar-form {
       left: @nav-header-wd;
-    } 
+    }
   }
 
 }
@@ -224,7 +224,7 @@
     border: 0;
     background-color: @nav-top-bg;
     #gradient.horizontal(@nav-top-bg-start, @nav-top-bg-end);
-    
+
     .navbar-header {
       #gradient-remove();
     }
@@ -271,7 +271,7 @@
       position: relative;
     }
 
-    // restore opened dropdown 
+    // restore opened dropdown
     .navbar-nav .open .dropdown-menu {
       left: auto;
       right: auto;
@@ -308,5 +308,5 @@
 #gradient-remove() {
   background-image: none;
   background-repeat: no-repeat;
-  filter: none;  
+  filter: none;
 }
