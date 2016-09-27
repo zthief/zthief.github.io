@@ -33,5 +33,6 @@
     "bower_components/pdfjs-dist/build/pdf.worker.js",
     "bower_components/pdfjs-dist/build/pdf.combined.js",
     "bower_components/weather-icons/css/weather-icons.min.css",
+    "bower_components/weather-icons/css/weather-icons-wind.min.css",
     "bower_components/weather-icons/font/*"
 ]

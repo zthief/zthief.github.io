@@ -59,13 +59,18 @@
             })
             .state('home.welcome', {
                 url: '/welcome',
-                templateUrl: helper.basepath('frontend/welcome.html')
+                templateUrl: helper.basepath('frontend/welcome.html'),
+                controller: 'WelcomeController',
+                controllerAs: 'welcome',
+                resolve: helper.resolveFor('weather-icons')
             })
-            .state('admin.dashboard', {
-                url: '/dashboard',
-                templateUrl: helper.basepath('backend/dashboard.html'),
-                resolve: helper.resolveFor('flot-chart', 'flot-chart-plugins')
-            })
+            // .state('admin.dashboard', {
+            //     url: '/dashboard',
+            //     templateUrl: helper.basepath('frontend/welcome.html'),
+            //     controller: 'WelcomeController',
+            //     controllerAs: 'welcome',
+            //     resolve: helper.resolveFor('weather-icons')
+            // })
             .state('page.resume', {
                 url: '/resume',
                 templateUrl: helper.basepath('singlepage/resume.html'),

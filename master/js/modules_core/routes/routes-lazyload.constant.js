@@ -7,7 +7,9 @@
             scripts: {
                 // 图标
                 'icons': ['vendor/font-awesome/css/font-awesome.min.css'],
-                'weather-icons': ['vendor/weather-icons/css/weather-icons.min.css'],
+                'weather-icons': ['vendor/weather-icons/css/weather-icons.min.css',
+                    'vendor/weather-icons/css/weather-icons-wind.min.css'
+                ],
                 // 图表
                 'flot-chart': ['vendor/Flot/jquery.flot.js'],
                 'flot-chart-plugins': ['vendor/flot.tooltip/js/jquery.flot.tooltip.min.js',

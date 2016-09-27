@@ -1,17 +1,103 @@
 <div class="content-wrapper">
     <div class="row">
+        <div class="col-lg-12">
+            <!-- START widget-->
+            <div class="panel widget">
+                <div class="panel-body text-center bg-center bg-purple-light">
+                    <div class="row row-table">
+                        <div class="col-xs-12 text-white">
+                            <img ng-src="app/img/kid.png" alt="Image" class="img-thumbnail img-circle" />
+                            <h3 class="m0">Zthief</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body text-center bg-purple">
+                    <div class="row row-table">
+                        <div class="col-xs-4">
+                            <a ng-href="//github.com/zthief" class="text-white" uib-tooltip="github:github.com/zthief" tooltip-trigger="mouseenter">
+                                <em class="fa fa-github fa-2x"></em>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a ng-href="//weibo.com/zthief" class="text-white" uib-tooltip="微博:weibo.com/zthief" tooltip-trigger="mouseenter">
+                                <em class="fa fa-weibo fa-2x"></em>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a class="text-white visible-lg" uib-tooltip="微信二维码" ng-click="welcome.openWeixinCode()">
+                                <em class="fa fa-weixin fa-2x"></em>
+                            </a>
+                            <script type="text/ng-template" id="mmqrcode.html">
+                                <div class="modal-body">
+                                    <img ng-src="app/img/mmqrcode.png" alt="Image" class="img-thumbnail"/>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-table">
+                    <div class="col-md-2 col-sm-3 col-xs-6 text-center bg-purple-light pv-xl">
+                        <em class="wi fa-4x" ng-class="'wi-owm-'+ welcome.weather.weather[0].id"></em>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-6 pv br">
+                        <div class="h1 m0 text-bold">{{welcome.weather.main.temp}}&deg;</div>
+                        <div>广州-{{welcome.weather.weather[0].description}}</div>
+                        <div>{{welcome.weather.main.temp_min + '~' + welcome.weather.main.temp_max}}&deg;</div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 hidden-xs pv text-center br">
+                        <div class="text-purple text-md">湿度</div>
+                        <div class="text-purple">
+                            <em class="wi wi-raindrop"></em>
+                            <span class="text-muted">{{welcome.weather.main.humidity}}%</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 hidden-xs pv text-center br">
+                        <div class="text-purple text-md">风速</div>
+                        <div class="text-purple">
+                            <em class="wi" ng-class="'wi-wind towards-'+ welcome.weather.wind.deg +'-deg'"></em>
+                            <span class="text-muted">{{welcome.weather.wind.speed}}m/s</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 hidden-xs pv text-center br">
+                        <div class="text-purple text-md">日出日落</div>
+                        <div class="text-purple">
+                            <em class="wi wi-sunrise"></em>
+                            <span class="text-muted">{{welcome.weather.sys.sunrise * 1000 | date: 'HH:mm'}}</span>
+                            -
+                            <em class="wi wi-sunset"></em>
+                            <span class="text-muted">{{welcome.weather.sys.sunset * 1000 | date: 'HH:mm'}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 hidden-xs pv text-center br">
+                        <now format="HH:mm:ss" class="text-purple text-md"></now>
+                        <div class="text-purple">
+                            <now format="yyyy-MM-dd" class="text-muted"></now>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END widget-->
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="col-md-12">
             <div ng-controller="CarouselDemoCtrl as caro" animate-enabled="true">
                 <div uib-carousel interval="caro.myInterval" active="caro.active">
                     <div uib-slide ng-repeat="slide in caro.slides" index="$index">
                         <img ng-src="{{slide.image}}" style="margin:auto;">
                         <div class="carousel-caption">
-                            <h4>Slide {{$index}}</h4>
+                            <h4>Slide
+                                {{$index}}</h4>
                             <p>{{slide.text}}</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3>待续。。。</h3>
         </div>
     </div>
 </div>
