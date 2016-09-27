@@ -14,6 +14,7 @@
 
         $rootScope.ScrollToAnchor = function(id) {
             $location.hash(id);
+            $anchorScroll.yOffset = 84;
             $anchorScroll();
         };
 

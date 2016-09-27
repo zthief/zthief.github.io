@@ -1,7 +1,7 @@
 <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand">{{resume.data.name}}</a>
+            <a ng-click="ScrollToAnchor('base-info')" class="navbar-brand">{{resume.data.name}}</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -41,10 +41,12 @@
 <section class="base-info">
     <a id="base-info" class="target-fix"></a>
     <div class="container">
-        <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail" />
+        <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail"/>
         <h1>{{resume.data.name}}</h1>
         <p>
-            {{resume.data.position}} | {{resume.data.company}}
+            {{resume.data.position}}
+            |
+            {{resume.data.company}}
         </p>
     </div>
 </section>
@@ -73,7 +75,9 @@
             </div>
             <div class="col-md-8">
                 <h3>{{resume.data.education.university}}<br/>
-                    <small>{{resume.data.education.qualification}} | {{resume.data.education.major}}</small>
+                    <small>{{resume.data.education.qualification}}
+                        |
+                        {{resume.data.education.major}}</small>
                 </h3>
             </div>
             <div class="col-md-2">
@@ -83,7 +87,7 @@
     </div>
 </section>
 <hr/>
-<section class="work-experience" name="work-experience" id="work-experience">
+<section class="work-experience" name="work-experience">
     <a id="work-experience" class="target-fix"></a>
     <div class="container">
         <div class="row">
@@ -102,7 +106,7 @@
         </div>
     </div>
 </section>
-<hr />
+<hr/>
 <section class="project-experience">
     <a id="project-experience" class="target-fix"></a>
     <div class="container">
@@ -119,7 +123,10 @@
                 </p>
                 <p>
                     <b>项目职责：</b>
-                    <p ng-repeat="duty in item.dutys">{{duty}}</p>
+                    <ul>
+                        <li ng-repeat="duty in item.dutys">{{duty}}</li>
+                    </ul>
+                    <!-- <p ng-repeat="duty in item.dutys">{{duty}}</p> -->
                 </p>
                 <p>
                     <b>技术要点：</b><br/>
@@ -156,4 +163,4 @@
             </div>
         </div>
     </div>
-</div>
+</footer>
