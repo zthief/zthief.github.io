@@ -19,6 +19,9 @@ hr {
 .row div {
     margin-top: 0px;
 }
+.minhr {
+    margin-bottom: 20px;
+}
 .navbar {
     margin-bottom: 0;
     color: #ffffff;
