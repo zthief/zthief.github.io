@@ -15,7 +15,6 @@
             events: true,
             modules: APP_REQUIRES.modules
         });
-
     }
 
     routesConfig.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'RouteHelpersProvider'];
@@ -23,7 +22,7 @@
     function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         $locationProvider.html5Mode(false);
         $urlRouterProvider.when('','/page/resume');
-        $urlRouterProvider.otherwise('/page/notfound');        
+        $urlRouterProvider.otherwise('/page/notfound');
         $stateProvider
             .state('page', {
                 url: '/page',
@@ -60,19 +59,22 @@
             })
             .state('home.welcome', {
                 url: '/welcome',
-                templateUrl: helper.basepath('frontend/welcome.html'),
-                controller: 'WelcomeController',
-                controllerAs: 'welcome'
+                templateUrl: helper.basepath('frontend/welcome.html')
             })
             .state('admin.dashboard', {
                 url: '/dashboard',
-                templateUrl: helper.basepath('backend/dashboard.html')
+                templateUrl: helper.basepath('backend/dashboard.html'),
+                resolve: helper.resolveFor('flot-chart', 'flot-chart-plugins')
             })
             .state('page.resume', {
                 url: '/resume',
                 templateUrl: helper.basepath('singlepage/resume.html'),
                 controller: 'ResumeController',
                 controllerAs: 'resume'
+            })
+            .state('page.browser', {
+                url: '/browser',
+                templateUrl: helper.basepath('singlepage/browser.html')
             });
     }
 })();

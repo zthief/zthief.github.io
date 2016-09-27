@@ -1,5 +1,17 @@
 <div class="content-wrapper">
-    <p>
-        我还没想好这里应该放点啥。。
-    </p>
+    <div class="row">
+        <div class="col-md-12">
+            <div ng-controller="CarouselDemoCtrl as caro" animate-enabled="true">
+                <div uib-carousel interval="caro.myInterval" active="caro.active">
+                    <div uib-slide ng-repeat="slide in caro.slides" index="$index">
+                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                        <div class="carousel-caption">
+                            <h4>Slide {{$index}}</h4>
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
