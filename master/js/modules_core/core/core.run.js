@@ -16,7 +16,7 @@
             $location.hash(id);
             //$anchorScroll.yOffset = 84;
             //$anchorScroll();
-            AnchorSmoothScroll.scrollTo(id, 84);
+            AnchorSmoothScroll.scrollTo(id, 55);
         };
 
         $rootScope.currTitle = $state.current.title;
