@@ -280,6 +280,17 @@
     //---------------
 
     // build for production (minify)
+
+    gulp.task('webbuild', gulpsync.sync([
+        'prod',
+        'assets'
+    ]));
+
+    gulp.task('webdebug', gulpsync.sync([
+        'assets',
+        'watch'
+    ]));
+
     gulp.task('build', gulpsync.sync([
         'prod',
         'vendor',

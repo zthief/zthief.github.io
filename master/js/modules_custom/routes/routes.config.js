@@ -22,7 +22,7 @@
     function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         $locationProvider.html5Mode(false);
         $urlRouterProvider.when('','/page/resume');
-        $urlRouterProvider.otherwise('/page/notfound');
+        $urlRouterProvider.otherwise('/page/resume');
         $stateProvider
             .state('page', {
                 url: '/page',
@@ -57,13 +57,13 @@
                 url: '/notfound',
                 templateUrl: helper.basepath('singlepage/404.html')
             })
-            .state('home.welcome', {
-                url: '/welcome',
-                templateUrl: helper.basepath('frontend/welcome.html'),
-                controller: 'WelcomeController',
-                controllerAs: 'welcome',
-                resolve: helper.resolveFor('weather-icons')
-            })
+            // .state('home.welcome', {
+            //     url: '/welcome',
+            //     templateUrl: helper.basepath('frontend/welcome.html'),
+            //     controller: 'WelcomeController',
+            //     controllerAs: 'welcome',
+            //     resolve: helper.resolveFor('weather-icons')
+            // })
             // .state('admin.dashboard', {
             //     url: '/dashboard',
             //     templateUrl: helper.basepath('frontend/welcome.html'),
