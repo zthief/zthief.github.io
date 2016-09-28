@@ -35,6 +35,16 @@ hr {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     z-index: 10;
 }
+.navbar-toggle{
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 8px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+}
 .self-assessment, .work-experience, .education-experience, .project-experience {
     position: relative;
     padding: 30px 0 20px;

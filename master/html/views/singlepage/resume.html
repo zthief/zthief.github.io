@@ -1,24 +1,27 @@
 <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a ng-click="ScrollToAnchor('base-info')" class="navbar-brand">{{resume.data.name}}</a>
+            <a type="button" class="text-white navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<em class="fa fa-bars fa-lg fa-fw"></em>
+			</a>
+            <a ng-click="ScrollToAnchor('base-info');isNavCollapsed = false" class="navbar-brand">{{resume.data.name}}</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" uib-collapse="!isNavCollapsed">
             <ul class="nav navbar-nav">
                 <li>
-                    <a ng-click="ScrollToAnchor('self-assessment')">简介</a>
+                    <a ng-click="ScrollToAnchor('self-assessment');isNavCollapsed = false">简介</a>
                 </li>
                 <li>
-                    <a ng-click="ScrollToAnchor('education-experience')">学历</a>
+                    <a ng-click="ScrollToAnchor('education-experience');isNavCollapsed = false">学历</a>
                 </li>
                 <li>
-                    <a ng-click="ScrollToAnchor('work-experience')">工作经历</a>
+                    <a ng-click="ScrollToAnchor('work-experience');isNavCollapsed = false">工作经历</a>
                 </li>
                 <li>
-                    <a ng-click="ScrollToAnchor('project-experience')">项目经验</a>
+                    <a ng-click="ScrollToAnchor('project-experience');isNavCollapsed = false">项目经验</a>
                 </li>
                 <li>
-                    <a ng-click="ScrollToAnchor('contact-me')">联系我</a>
+                    <a ng-click="ScrollToAnchor('contact-me');isNavCollapsed = false">联系我</a>
                 </li>
             </ul>
             <!-- <ul class="nav navbar-nav navbar-right">
