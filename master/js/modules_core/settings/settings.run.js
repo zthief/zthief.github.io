@@ -12,8 +12,8 @@
         // Global Settings
         // -----------------------------------
         $rootScope.app = {
-            name: 'Seed',
-            description: 'Seed',
+            name: 'Zthief',
+            description: '简历',
             author: 'Zthief',
             year: ((new Date()).getFullYear()),
             layout: {

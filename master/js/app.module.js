@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('Seed', [
+        .module('ZthiefResume', [
             'app.core',
             'app.routes',
             'app.notify',
