@@ -21,27 +21,27 @@
                     <a ng-click="ScrollToAnchor('contact-me')">联系我</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <!-- <ul class="nav navbar-nav navbar-right">
                 <li class="visible-lg">
                     <a role="button" ui-sref="home.welcome" title="前台页面">
                         <em class="fa fa-home">
                         </em>&nbsp;前台页面
                     </a>
                 </li>
-                <!-- <li class="visible-lg">
+                <li class="visible-lg">
                     <a role="button" ui-sref="admin.dashboard"  title="后台页面">
                         <em class="fa fa-cogs">
                         </em>&nbsp;后台
                     </a>
-                </li> -->
-            </ul>
+                </li>
+            </ul> -->
         </div>
     </div>
 </nav>
 <section class="base-info">
     <a id="base-info" class="target-fix"></a>
     <div class="container">
-        <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail" />
+        <img ng-src="{{resume.data.photo}}" alt="头像" class="img-circle img-thumbnail animated" ng-class="resume.animate" ng-click="resume.randomAnimate()" />
         <h1>{{resume.data.name}}</h1>
         <p>
             {{resume.data.position}} | {{resume.data.company}}
@@ -145,20 +145,43 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <h2>联系方式</h5>
+                <h2>联系方式</h2>
             </div>
             <div class="col-md-8">
                 <p>
                     邮箱：
-                    <br/>{{resume.data.contact.email}}
+                    <br/>
+                    <a href="mailto:{{resume.data.contact.email}}" class="text-white">
+                        <em class="fa fa-pencil-square-o fa-lg fa-fw"></em>&nbsp;{{resume.data.contact.email}}</a>
                 </p>
                 <p>
-                    手机：
-                    <br/>{{resume.data.contact.tel}}
+                    电话：
+                    <br/>
+                    <em class="fa fa-phone fa-lg fa-fw"></em>&nbsp;{{resume.data.contact.tel}}
                 </p>
                 <p>
-                    QQ/微信：
-                    <br/>{{resume.data.contact.qq}}
+                    QQ：
+                    <br/>
+                    <em class="fa fa-qq fa-lg fa-fw"></em>&nbsp;{{resume.data.contact.qq}}
+                </p>
+                <p class="visible-xs">
+                    微信：
+                    <br/>
+                    <a ng-click="resume.openWeixinCode()" class="text-white">
+                        <em class="fa fa-weixin fa-lg fa-fw"></em>&nbsp;点我!</a>
+                </p>
+            </div>
+            <div class="col-md-2 visible-lg">
+                <script type="text/ng-template" id="mmqrcode.html">
+                    <div class="modal-body">
+                        <img ng-src="app/img/mmqrcode.png" alt="Image" class="img-thumbnail"/>
+                    </div>
+                </script>
+                <p class="text-center">
+                    <a class="text-white" ng-click="resume.openWeixinCode()">
+                        <img ng-src="app/img/mmqrcode.png" alt="Image" class="img-thumbnail" />
+                        <span>微信扫一扫</span>
+                    </a>
                 </p>
             </div>
         </div>

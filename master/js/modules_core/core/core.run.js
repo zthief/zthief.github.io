@@ -5,17 +5,18 @@
         .module('app.core')
         .run(coreRun);
 
-    coreRun.$inject = ['$rootScope', '$localStorage', '$state', '$stateParams', '$location', '$anchorScroll', 'Colors'];
+    coreRun.$inject = ['$rootScope', '$localStorage', '$state', '$stateParams', '$location', '$anchorScroll', 'Colors', 'AnchorSmoothScroll'];
 
-    function coreRun($rootScope, $localStorage, $state, $stateParams, $location, $anchorScroll, Colors) {
+    function coreRun($rootScope, $localStorage, $state, $stateParams, $location, $anchorScroll, Colors, AnchorSmoothScroll) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         $rootScope.$localStorage = $localStorage;
 
         $rootScope.ScrollToAnchor = function(id) {
             $location.hash(id);
-            $anchorScroll.yOffset = 84;
-            $anchorScroll();
+            //$anchorScroll.yOffset = 84;
+            //$anchorScroll();
+            AnchorSmoothScroll.scrollTo(id, 84);
         };
 
         $rootScope.currTitle = $state.current.title;
