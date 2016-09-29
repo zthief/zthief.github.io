@@ -4,6 +4,11 @@
     var gulp = require('gulp'),
         $ = require('gulp-load-plugins')(),
         gulpsync = $.sync(gulp),
+        pngquant = require('imagemin-pngquant'),
+        imageminOptipng = require('imagemin-optipng'),
+        imageminSvgo = require('imagemin-svgo'),
+        imageminGifsicle = require('imagemin-gifsicle'),
+        imageminJpegtran = require('imagemin-jpegtran'),
         del = require('del');
 
     // production mode (see build task)
@@ -55,7 +60,8 @@
             themes: [paths.styles + 'themes/*'],
             custom: [paths.styles + 'backend/*',
                 paths.styles + 'frontend/*',
-                paths.styles + 'singlepage/*'],
+                paths.styles + 'singlepage/*'
+            ],
             watch: [paths.styles + '**/*', '!' + paths.styles + 'themes/*']
         },
         imgs: paths.imgs + '*.*'
@@ -75,6 +81,13 @@
     };
 
     // PLUGINS OPTIONS
+
+    var htmlMinOpt = {
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true
+    };
 
     var prettifyOpts = {
         unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u', 'pre', 'code']
@@ -135,8 +148,12 @@
     gulp.task('vendor:app', function() {
         log('Copying vendor assets..');
 
-        var jsFilter = $.filter('**/*.js', {restore: true});
-        var cssFilter = $.filter('**/*.css', {restore: true});
+        var jsFilter = $.filter('**/*.js', {
+            restore: true
+        });
+        var cssFilter = $.filter('**/*.css', {
+            restore: true
+        });
 
         return gulp.src(vendor.app.source, {
                 base: 'bower_components'
@@ -179,6 +196,8 @@
         return gulp.src(source.styles.themes)
             .pipe($.plumber())
             .pipe($.less())
+            .pipe($.autoprefixer(autoprefixerOpts))
+            .pipe($.if(isProduction, $.minifyCss()))
             .pipe(gulp.dest(build.styles));
     });
 
@@ -190,6 +209,7 @@
             .pipe($.plumber())
             .pipe($.htmlPrettify(prettifyOpts))
             .pipe($.revCollector())
+            .pipe($.if(isProduction, $.htmlmin(htmlMinOpt)))
             .pipe(gulp.dest(build.templates.index));
     });
 
@@ -203,14 +223,28 @@
                 extension: '.html'
             })))
             .pipe($.htmlPrettify(prettifyOpts))
+            .pipe($.if(isProduction, $.htmlmin(htmlMinOpt)))
             .pipe(gulp.dest(build.templates.views));
     });
 
     // img
-    gulp.task('image', function(){
+    gulp.task('image', function() {
         log('Building images..');
 
         return gulp.src(source.imgs)
+            .pipe($.imagemin({
+                progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+                svgoPlugins: [{
+                    removeViewBox: false
+                }], //不要移除svg的viewbox属性
+                use: [pngquant(), imageminJpegtran({
+                        progressive: true
+                    }), imageminGifsicle({
+                        interlaced: true
+                    }), imageminOptipng({
+                        optimizationLevel: 3
+                    }), imageminSvgo()] //使用pngquant深度压缩png图片的imagemin插件
+            }))
             .pipe(gulp.dest(build.imgs));
     });
 
