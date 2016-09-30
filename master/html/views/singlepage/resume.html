@@ -24,20 +24,14 @@
                     <a ng-click="ScrollToAnchor('contact-me');isNavCollapsed = false">联系我</a>
                 </li>
             </ul>
-            <!-- <ul class="nav navbar-nav navbar-right">
-                <li class="visible-lg">
-                    <a role="button" ui-sref="home.welcome" title="前台页面">
-                        <em class="fa fa-home">
-                        </em>&nbsp;前台页面
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a role="button" ui-sref="admin.dashboard" title="控制台">
+                        <em class="fa fa-dashboard">
+                        </em>&nbsp;控制台
                     </a>
                 </li>
-                <li class="visible-lg">
-                    <a role="button" ui-sref="admin.dashboard"  title="后台页面">
-                        <em class="fa fa-cogs">
-                        </em>&nbsp;后台
-                    </a>
-                </li>
-            </ul> -->
+            </ul>
         </div>
     </div>
 </nav>
@@ -153,7 +147,7 @@
             <div class="col-md-8">
                 <p>
                     邮箱：<br/>
-                    <a href="mailto:{{resume.data.contact.email}}" class="text-white"><em class="fa fa-pencil-square-o fa-lg fa-fw"></em>&nbsp;{{resume.data.contact.email}}</a>
+                    <a href="mailto:{{resume.data.contact.email}}" class="text-white"><em class="fa fa-envelope fa-lg fa-fw"></em>&nbsp;{{resume.data.contact.email}}</a>
                 </p>
                 <p>
                     电话：<br/>

@@ -6,8 +6,7 @@
         .constant('APP_REQUIRES', {
             scripts: {
                 // 图标
-                'icons': ['//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css'
-                ],
+                'icons': ['//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css'],
                 'weather-icons': ['//cdn.bootcss.com/weather-icons/2.0.10/css/weather-icons.min.css',
                     '//cdn.bootcss.com/weather-icons/2.0.10/css/weather-icons-wind.min.css'
                 ],
@@ -19,6 +18,7 @@
                     '//cdn.bootcss.com/flot/0.8.3/jquery.flot.time.min.js',
                     '//cdn.bootcss.com/flot/0.8.3/jquery.flot.categories.min.js'
                 ],
+                'chart.js': ['//cdn.bootcss.com/Chart.js/2.3.0/Chart.min.js'],
                 //表单控件
                 'filestyle': ['//cdn.bootcss.com/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js'],
                 'inputmask': ['//cdn.bootcss.com/jquery.inputmask/3.3.1/jquery.inputmask.bundle.min.js'],

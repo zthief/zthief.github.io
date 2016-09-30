@@ -17,20 +17,18 @@
         <!-- START sidebar nav-->
         <ul class="nav">
             <!-- START user info-->
-            <li class="has-user-block">
+            <li class="has-user-block" ng-controller="AccountController as account">
                 <div uib-collapse="userBlockcollapse">
                     <div class="item user-block">
                         <!-- User picture-->
                         <div class="user-block-picture">
-                            <div class="user-block-status">
-                                <img src="./app/img/kid.png" alt="头像" class="img-responsive img-circle"/>
-                                <div class="circle circle-success circle-lg"></div>
-                            </div>
+                            <img src="./app/img/kid.png" alt="头像" class="img-circle img-thumbnail"/>
                         </div>
                         <div class="user-block-info">
                             <span class="user-block-name">{{app.author}}</span>
-                            <span class="user-block-role">Owner</span>
+                            <button type="button" class="btn btn-warning" ng-click="account.logout()">退出</button>
                         </div>
+
                     </div>
                 </div>
             </li>

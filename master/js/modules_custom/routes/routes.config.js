@@ -21,8 +21,8 @@
 
     function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         $locationProvider.html5Mode(false);
-        $urlRouterProvider.when('','/page/resume');
-        $urlRouterProvider.otherwise('/page/resume');
+        $urlRouterProvider.when('', '/page/resume');
+        $urlRouterProvider.otherwise('/page/notfound');
         $stateProvider
             .state('page', {
                 url: '/page',
@@ -37,7 +37,7 @@
                 url: '/home',
                 abstract: true,
                 templateUrl: helper.basepath('frontend.html'),
-                resolve: helper.resolveFor('modernizr', 'fastclick', 'icons', 'animo', 'animate','hSweetAlert', 'screenfull'),
+                resolve: helper.resolveFor('modernizr', 'fastclick', 'icons', 'animo', 'animate', 'hSweetAlert', 'screenfull'),
                 controller: ['$rootScope', function($rootScope) {
                     $rootScope.app.layout.horizontal = true;
                     $rootScope.app.layout.isCollapsed = false;
@@ -47,7 +47,7 @@
                 url: '/admin',
                 abstract: true,
                 templateUrl: helper.basepath('backend.html'),
-                resolve: helper.resolveFor('modernizr', 'fastclick', 'icons', 'animo', 'animate','hSweetAlert', 'screenfull'),
+                resolve: helper.resolveFor('modernizr', 'fastclick', 'icons', 'animo', 'animate', 'hSweetAlert', 'screenfull', 'angular-md5'),
                 controller: ['$rootScope', function($rootScope) {
                     $rootScope.app.layout.horizontal = false;
                     $rootScope.app.layout.isCollapsed = false;
@@ -64,18 +64,25 @@
             //     controllerAs: 'welcome',
             //     resolve: helper.resolveFor('weather-icons')
             // })
-            // .state('admin.dashboard', {
-            //     url: '/dashboard',
-            //     templateUrl: helper.basepath('frontend/welcome.html'),
-            //     controller: 'WelcomeController',
-            //     controllerAs: 'welcome',
-            //     resolve: helper.resolveFor('weather-icons')
-            // })
+            .state('admin.dashboard', {
+                url: '/dashboard',
+                templateUrl: helper.basepath('backend/dashboard.html'),
+                controller: 'DashboardController',
+                controllerAs: 'dash',
+                resolve: helper.resolveFor('slimscroll', 'weather-icons', 'chart.js')
+            })
             .state('page.resume', {
                 url: '/resume',
                 templateUrl: helper.basepath('singlepage/resume.html'),
                 controller: 'ResumeController',
                 controllerAs: 'resume'
+            })
+            .state('page.login', {
+                url: '/login',
+                templateUrl: helper.basepath('singlepage/login.html'),
+                controller: 'AccountController',
+                controllerAs: 'login',
+                resolve: helper.resolveFor('angular-md5')
             })
             .state('page.browser', {
                 url: '/browser',
