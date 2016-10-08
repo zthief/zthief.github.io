@@ -1,6 +1,6 @@
 <div class="content-wrapper">
     <div class="pull-right">
-        <button type="button" name="button" class="btn btn-primary" ng-click=dash.refresh()><em class="fa fa-refresh fa-fw"></em></button>
+        <button type="button" name="button" class="btn btn-primary" ng-click=dash.refresh()><em class="fa fa-refresh fa-fw"></em>刷新</button>
     </div>
     <h3>
         <em class="fa fa-dashboard fa-fw"></em>&nbsp;控制台
@@ -63,15 +63,27 @@
     </div>
     <div class="row">
         <div class="col-lg-8 col-md-9">
-            <h4>访问量</h4>
-            <div>
-                <canvas linechart="" options="dash.line.options" data="dash.line.data" height="300"></canvas>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">访问量</div>
+               </div>
+               <div class="panel-wrapper">
+                  <div class="panel-body">
+                     <canvas linechart="" options="dash.line.options" data="dash.line.data" height="300"></canvas>
+                  </div>
+               </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-3">
-            <h4>属性表</h4>
-            <div>
-                <canvas radarchart="" options="dash.radar.options" data="dash.radar.data" height="300"></canvas>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">用户喜好</div>
+               </div>
+               <div class="panel-wrapper">
+                  <div class="panel-body">
+                     <canvas radarchart="" options="dash.radar.options" data="dash.radar.data" height="300"></canvas>
+                  </div>
+               </div>
             </div>
         </div>
     </div>

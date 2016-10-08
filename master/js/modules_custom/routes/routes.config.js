@@ -71,6 +71,11 @@
                 controllerAs: 'dash',
                 resolve: helper.resolveFor('slimscroll', 'weather-icons', 'chart.js')
             })
+            .state('admin.form', {
+                url: '/form',
+                templateUrl: helper.basepath('backend/form.html'),
+                resolve: helper.resolveFor('ui.select')
+            })
             .state('page.resume', {
                 url: '/resume',
                 templateUrl: helper.basepath('singlepage/resume.html'),

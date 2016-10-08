@@ -29,7 +29,7 @@
             } else {
                 Notify.alert(msg, {
                     status: 'success',
-                    pos: 'bottom-right'
+                    pos: 'top-center'
                 });
             }
         }
@@ -45,7 +45,7 @@
             } else {
                 Notify.alert(msg, {
                     status: 'info',
-                    pos: 'bottom-right'
+                    pos: 'top-center'
                 });
             }
         }
@@ -61,7 +61,7 @@
             } else {
                 Notify.alert(msg, {
                     status: 'warning',
-                    pos: 'bottom-right'
+                    pos: 'top-center'
                 });
             }
         }
@@ -77,7 +77,7 @@
             } else {
                 Notify.alert(msg, {
                     status: 'error',
-                    pos: 'bottom-right'
+                    pos: 'top-center'
                 });
             }
         }

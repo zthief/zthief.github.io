@@ -13,16 +13,17 @@
         activate();
 
         function activate() {
-            vm.uploadFilesCount = randomBy(2000, 10000);
-            vm.emptySpace = randomBy(500, 2000);
-            vm.usersCount = randomBy(100, 500);
-            vm.complaints = randomBy(0, 100);
 
             vm.refresh = refresh;
 
             refresh();
 
             function refresh() {
+                vm.uploadFilesCount = randomBy(2000, 10000);
+                vm.emptySpace = randomBy(500, 2000);
+                vm.usersCount = randomBy(100, 500);
+                vm.complaints = randomBy(0, 100);
+
                 vm.line = {
                     data: {
                         labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
@@ -57,18 +58,26 @@
 
                 vm.radar = {
                     data: {
-                        labels: ['傲慢', '妒忌', '暴怒', '懒惰', '贪婪', '暴食', '色欲'],
+                        labels: ['动画', '漫画', '音乐', '游戏', '小说'],
                         datasets: [{
-                            label: '玩家1',
-                            data: [randomBy(5), randomBy(5), randomBy(5), randomBy(5), randomBy(5), randomBy(5)],
+                            label: '10-20岁',
+                            data: [randomBy(5), randomBy(5), randomBy(5), randomBy(5), randomBy(5)],
                             backgroundColor: 'rgba(114,102,186,0.2)',
-                            borderColor: 'rgba(114,102,186,1)'
+                            borderColor: 'rgba(114,102,186,1)',
                         }, {
-                            label: '玩家2',
-                            data: [randomBy(5), randomBy(5), randomBy(5), randomBy(5), randomBy(5), randomBy(5)],
+                            label: '20-30岁',
+                            data: [randomBy(5), randomBy(5), randomBy(5), randomBy(5), randomBy(5)],
                             backgroundColor: 'rgba(35,183,229,0.2)',
                             borderColor: 'rgba(35,183,229,1)'
                         }]
+                    },
+                    options: {
+                        scale:{
+                            ticks: {
+                                min: 0,
+                                max: 5
+                            }
+                        }
                     }
                 };
             }

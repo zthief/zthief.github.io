@@ -7,5 +7,15 @@
     "text": "控制台",
     "sref": "admin.dashboard",
     "icon": "fa fa-dashboard"
+  },{
+    "text": "Demo",
+    "sref": "#",
+    "icon": "fa fa-gift",
+    "submenu": [
+      {
+        "text": "表单",
+        "sref": "admin.form"
+      }
+    ]
   }
 ]
