@@ -17,12 +17,13 @@
         });
     }
 
-    routesConfig.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'RouteHelpersProvider'];
+    routesConfig.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'RouteHelpersProvider', 'VERSION_STAMP'];
 
-    function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper) {
+    function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, helper, VERSION_STAMP) {
         $locationProvider.html5Mode(false);
         $urlRouterProvider.when('', '/page/resume');
         $urlRouterProvider.otherwise('/page/notfound');
+        helper.setVersionStamp(VERSION_STAMP.versionStamp);
         $stateProvider
             .state('page', {
                 url: '/page',
@@ -53,17 +54,6 @@
                     $rootScope.app.layout.isCollapsed = false;
                 }]
             })
-            .state('page.notfound', {
-                url: '/notfound',
-                templateUrl: helper.basepath('singlepage/404.html')
-            })
-            // .state('home.welcome', {
-            //     url: '/welcome',
-            //     templateUrl: helper.basepath('frontend/welcome.html'),
-            //     controller: 'WelcomeController',
-            //     controllerAs: 'welcome',
-            //     resolve: helper.resolveFor('weather-icons')
-            // })
             .state('admin.dashboard', {
                 url: '/dashboard',
                 templateUrl: helper.basepath('backend/dashboard.html'),
@@ -74,7 +64,15 @@
             .state('admin.form', {
                 url: '/form',
                 templateUrl: helper.basepath('backend/form.html'),
+                controller: 'FormController',
+                controllerAs: 'formDemo',
                 resolve: helper.resolveFor('ui.select')
+            })
+            .state('admin.table', {
+                url: '/table',
+                templateUrl: helper.basepath('backend/table.html'),
+                controller: 'TableController',
+                controllerAs: 'table'
             })
             .state('page.resume', {
                 url: '/resume',
@@ -88,6 +86,10 @@
                 controller: 'AccountController',
                 controllerAs: 'login',
                 resolve: helper.resolveFor('angular-md5')
+            })
+            .state('page.notfound', {
+                url: '/notfound',
+                templateUrl: helper.basepath('singlepage/404.html')
             })
             .state('page.browser', {
                 url: '/browser',

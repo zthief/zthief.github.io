@@ -21,8 +21,10 @@
             vm.getProvinceList = getProvinceList;
             vm.getCityList = getCityList;
             vm.getDistrictList = getDistrictList;
+            vm.getFavorList = getFavorList;
 
             getProvinceList();
+            getFavorList();
             init();
 
             function getProvinceList() {
@@ -52,6 +54,15 @@
                     });
             }
 
+            function getFavorList() {
+                vm.user.districtID = '';
+                JsonService
+                    .getJSON('config/favors.json')
+                    .success(function(data) {
+                        vm.favorList = data;
+                    });
+            }
+
             function init() {
                 vm.user = {
                     name: '',
@@ -62,7 +73,8 @@
                     status: 'enabled',
                     proID: '',
                     cityID: '',
-                    districtID: ''
+                    districtID: '',
+                    favors: []
                 };
 
                 if (vm.form) {
@@ -71,7 +83,13 @@
             }
 
             function submitForm() {
-                MessageService.showSuccess('提交成功!');
+                MessageService.showConfirm(JSON.stringify(vm.user), function(isConfirm){
+                    if(isConfirm){
+                        MessageService.showSuccess('就当是提交了吧！');
+                    }else{
+                        MessageService.showWarning('没有提交！');
+                    }
+                });
             }
         }
     }

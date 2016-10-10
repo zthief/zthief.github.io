@@ -1,16 +1,13 @@
 <div class="content-wrapper">
-    <div class="pull-right">
-        <button type="button" name="button" class="btn btn-primary" ng-click=dash.refresh()><em class="fa fa-refresh fa-fw"></em>刷新</button>
-    </div>
     <h3>
-        <em class="fa fa-wpforms fa-fw"></em>&nbsp;表单Demo
+        <em class="fa fa-wpforms fa-fw"></em>&nbsp;表单
     </h3>
-    <div class="row" ng-controller="FormController as formDemo">
+    <div class="row">
         <div class="col-md-12">
             <form class="form-validate form-horizontal" name="formDemo.form" ng-submit="formDemo.submitForm()" novalidate="">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        表单Demo
+                        表单Demo|验证Demo|MessageServiceDemo
                         <span class="pull-right">
                             <a ng-click="formDemo.init()">
                                 <em class="fa fa-refresh"></em>
@@ -23,11 +20,14 @@
                                 <label class="col-sm-2 control-label">用户名</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" name="name" placeholder="请输入用户名" ng-model="formDemo.user.name" required="" ng-maxlength=20>
-                                    <span ng-show="formDemo.form.name.$dirty && formDemo.form.name.$error.required" class="text-danger">用户名<span class="text-danger">不能为空</span></span>
+                                    <span ng-show="formDemo.form.name.$dirty && formDemo.form.name.$error.required" class="text-danger">用户名<span class="text-danger">不能为空</span>
+                                    </span>
                                     <span ng-show="formDemo.form.name.$dirty && formDemo.form.name.$error.maxlength" class="text-danger">用户名长度不能超过20</span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <small class="text-muted"><span class="text-danger">不能为空</span>，最长20</small>
+                                    <small class="text-muted">
+                                        <span class="text-danger">不能为空</span>，最长20
+                                    </small>
                                 </div>
                             </div>
                         </fieldset>
@@ -36,12 +36,14 @@
                                 <label class="col-sm-2 control-label">密码</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" name="password" placeholder="请输入密码" ng-model="formDemo.user.password" required="" ng-minlength=6 ng-pattern="/^[a-zA-Z0-9]+$/">
-                                    <span ng-show="formDemo.form.password.$dirty && formDemo.form.password.$error.required" class="text-danger">密码<span class="text-danger">不能为空</span></span>
+                                    <span ng-show="formDemo.form.password.$dirty && formDemo.form.password.$error.required" class="text-danger">密码<span class="text-danger">不能为空</span>
+                                    </span>
                                     <span ng-show="formDemo.form.password.$dirty && formDemo.form.password.$error.minlength" class="text-danger">密码长度至少6位</span>
                                     <span ng-show="formDemo.form.password.$dirty && formDemo.form.password.$error.pattern" class="text-danger">只能为字母和数字</span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <small class="text-muted">密码格式，<span class="text-danger">不能为空</span>，最少6位，字母数字正则</small>
+                                    <small class="text-muted">
+                                        <span class="text-danger">不能为空</span>，密码格式，最少6位，字母数字正则</small>
                                 </div>
                             </div>
                         </fieldset>
@@ -50,11 +52,13 @@
                                 <label class="col-sm-2 control-label">邮箱</label>
                                 <div class="col-sm-6">
                                     <input type="email" class="form-control" name="email" placeholder="请输入邮箱：mail@example.com" ng-model="formDemo.user.email" required="">
-                                    <span ng-show="formDemo.form.email.$dirty && formDemo.form.email.$error.required" class="text-danger">邮箱<span class="text-danger">不能为空</span></span>
+                                    <span ng-show="formDemo.form.email.$dirty && formDemo.form.email.$error.required" class="text-danger">邮箱<span class="text-danger">不能为空</span>
+                                    </span>
                                     <span ng-show="formDemo.form.email.$dirty && formDemo.form.email.$error.email" class="text-danger">邮箱格式不正确</span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <small class="text-muted"><span class="text-danger">不能为空</span>，只能输入邮箱格式</small>
+                                    <small class="text-muted">
+                                        <span class="text-danger">不能为空</span>，只能输入邮箱格式</small>
                                 </div>
                             </div>
                         </fieldset>
@@ -132,10 +136,12 @@
                                             </button>
                                         </span>
                                     </div>
-                                    <span ng-show="formDemo.form.province.$dirty && formDemo.form.province.$error.required" class="text-danger">省份<span class="text-danger">不能为空</span></span>
+                                    <span ng-show="formDemo.form.province.$dirty && formDemo.form.province.$error.required" class="text-danger">省份<span class="text-danger">不能为空</span>
+                                    </span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <small class="text-muted">字典控件，只显示50，<span class="text-danger">不能为空</span></small>
+                                    <small class="text-muted"><span class="text-danger">不能为空</span>, 字典控件
+                                    </small>
                                 </div>
                             </div>
                         </fieldset>
@@ -158,10 +164,12 @@
                                             </button>
                                         </span>
                                     </div>
-                                    <span ng-show="formDemo.form.city.$dirty && formDemo.form.city.$error.required" class="text-danger">城市<span class="text-danger">不能为空</span></span>
+                                    <span ng-show="formDemo.form.city.$dirty && formDemo.form.city.$error.required" class="text-danger">城市<span class="text-danger">不能为空</span>
+                                    </span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <small class="text-muted">字典控件，只显示50，<span class="text-danger">不能为空</span></small>
+                                    <small class="text-muted"><span class="text-danger">不能为空</span>, 字典控件
+                                    </small>
                                 </div>
                             </div>
                         </fieldset>
@@ -172,7 +180,7 @@
                                     <div class="input-group">
                                         <ui-select ng-model="formDemo.user.districtID" name="district" theme="bootstrap" class="text-left">
                                             <ui-select-match placeholder="区/县">{{$select.selected.DisName}}</ui-select-match>
-                                            <ui-select-choices repeat="district.Id as district in (formDemo.districtList | propsFilter:{Disname:$select.search, ProId:$select.search, Id:$select.search}) | limitTo: 50">
+                                            <ui-select-choices repeat="district.Id as district in (formDemo.districtList | propsFilter:{Disname:$select.search, Id:$select.search}) | limitTo: 50">
                                                 <div ng-bind-html="district.DisName | highlight: $select.search"></div>
                                             </ui-select-choices>
                                         </ui-select>
@@ -184,10 +192,25 @@
                                             </button>
                                         </span>
                                     </div>
-                                    <span ng-show="formDemo.form.district.$dirty && formDemo.form.district.$error.required" class="text-danger">区/县<span class="text-danger">不能为空</span></span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <small class="text-muted">字典控件，只显示50</small>
+                                    <small class="text-muted">字典控件</small>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">爱好</label>
+                                <div class="col-sm-6">
+                                    <ui-select multiple="" ng-model="formDemo.user.favors" name="favors" theme="bootstrap" class="text-left">
+                                        <ui-select-match placeholder="爱好">{{$item.favName}}</ui-select-match>
+                                        <ui-select-choices repeat="favor.Id as favor in (formDemo.favorList | propsFilter:{favName:$select.search, Id:$select.search}) | limitTo: 50">
+                                            <div ng-bind-html="favor.favName | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <small class="text-muted">字典控件, 多选</small>
                                 </div>
                             </div>
                         </fieldset>
@@ -202,250 +225,4 @@
             </form>
         </div>
     </div>
-    <div class="row" ng-controller="FormController as formWizard">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    向导表单Demo
-                    <span class="pull-right">
-                        <a ng-click="formWizard.init()">
-                            <em class="fa fa-refresh"></em>
-                        </a>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <form form-wizard="" steps="3" name="formWizard.form" novalidate="" ng-submit="formWizard.submitForm()">
-                        <div class="form-wizard wizard-horizontal">
-                            <ol class="row">
-                                <li ng-class="{'active':wizard.active(1)}" ng-click="wizard.go(1)" class="col-md-4">
-                                    <h4>第一步</h4>
-                                    <small class="text-muted">第一步说明</small>
-                                </li>
-                                <li ng-class="{'active':wizard.active(2)}" ng-click="wizard.go(2)" class="col-md-4">
-                                    <h4>第二步</h4>
-                                    <small class="text-muted">第二步说明</small>
-                                </li>
-                                <li ng-class="{'active':wizard.active(3)}" ng-click="wizard.go(3)" class="col-md-4">
-                                    <h4>第三步</h4>
-                                    <small class="text-muted">第三步说明</small>
-                                </li>
-                            </ol>
-                            <div ng-show="wizard.active(1)">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">用户名</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" name="name" placeholder="请输入用户名" ng-model="formWizard.user.name" required="" ng-maxlength=20>
-                                            <span ng-show="formWizard.form.name.$dirty && formWizard.form.name.$error.required" class="text-danger">用户名<span class="text-danger">不能为空</span></span>
-                                            <span ng-show="formWizard.form.name.$dirty && formWizard.form.name.$error.maxlength" class="text-danger">用户名长度不能超过20</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted"><span class="text-danger">不能为空</span>，最长20</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">密码</label>
-                                        <div class="col-sm-6">
-                                            <input type="password" class="form-control" name="password" placeholder="请输入密码" ng-model="formWizard.user.password" required="" ng-minlength=6 ng-pattern="/^[a-zA-Z0-9]+$/">
-                                            <span ng-show="formWizard.form.password.$dirty && formWizard.form.password.$error.required" class="text-danger">密码<span class="text-danger">不能为空</span></span>
-                                            <span ng-show="formWizard.form.password.$dirty && formWizard.form.password.$error.minlength" class="text-danger">密码长度至少6位</span>
-                                            <span ng-show="formWizard.form.password.$dirty && formWizard.form.password.$error.pattern" class="text-danger">只能为字母和数字</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">密码格式，<span class="text-danger">不能为空</span>，最少6位，字母数字正则</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">邮箱</label>
-                                        <div class="col-sm-6">
-                                            <input type="email" class="form-control" name="email" placeholder="请输入邮箱：mail@example.com" ng-model="formWizard.user.email" required="">
-                                            <span ng-show="formWizard.form.email.$dirty && formWizard.form.email.$error.required" class="text-danger">邮箱<span class="text-danger">不能为空</span></span>
-                                            <span ng-show="formWizard.form.email.$dirty && formWizard.form.email.$error.email" class="text-danger">邮箱格式不正确</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted"><span class="text-danger">不能为空</span>，只能输入邮箱格式</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <ul class="pager">
-                                    <li class="next">
-                                        <a ng-click="wizard.go(2)" ng-disabled="formWizard.form.$invalid">下一步
-                                            <em class="fa fa-chevron-right"></em>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div ng-show="wizard.active(2)">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">工资</label>
-                                        <div class="col-sm-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">￥</span>
-                                                <input type="number" name="salary" ng-model="formWizard.user.salary" class="form-control" step="100" min="0"/>
-                                            </div>
-                                            <span ng-show="formWizard.form.salary.$dirty && formWizard.form.salary.$error.number" class="text-danger">请输入合法的数字</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">数字，步长100，最小0</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">性别</label>
-                                        <div class="col-sm-6">
-                                            <div class="radio-inline c-radio">
-                                                <label>
-                                                    <input type="radio" name="status" ng-value="'male'" ng-model="formWizard.user.sex"/>
-                                                    <span class="fa fa-circle"></span>男</label>
-                                            </div>
-                                            <div class="radio-inline c-radio">
-                                                <label>
-                                                    <input type="radio" name="status" ng-value="'female'" ng-model="formWizard.user.sex"/>
-                                                    <span class="fa fa-circle"></span>女</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">单选框</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">状态</label>
-                                        <div class="col-sm-6">
-                                            <div class="checkbox c-checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="status" ng-model="formWizard.user.status" ng-true-value="'enabled'" ng-false-value="'disabled'"/>
-                                                    <span class="fa fa-check"></span>
-                                                    启用
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">复选框</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <ul class="pager">
-                                    <li class="previous">
-                                        <a ng-click="wizard.go(1)">
-                                            <em class="fa fa-chevron-left">
-                                                上一步</em>
-                                        </a>
-                                    </li>
-                                    <li class="next">
-                                        <a ng-click="wizard.go(3)">下一步
-                                            <em class="fa fa-chevron-right"></em>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div ng-show="wizard.active(3)">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">省</label>
-                                        <div class="col-sm-6">
-                                            <div class="input-group">
-                                                <ui-select ng-model="formWizard.user.proID" name="province" theme="bootstrap" class="text-left" required="" on-select="formWizard.getCityList()">
-                                                    <ui-select-match placeholder="省">{{$select.selected.name}}</ui-select-match>
-                                                    <ui-select-choices repeat="province.ProID as province in (formWizard.provinceList | propsFilter:{name:$select.search, ProId:$select.search}) | limitTo: 50 | orderBy: 'ProSort'">
-                                                        <div ng-bind-html="province.name | highlight: $select.search"></div>
-                                                        <small>
-                                                            <span ng-bind-html="province.ProRemark | highlight: $select.search"></span>
-                                                        </small>
-                                                    </ui-select-choices>
-                                                </ui-select>
-                                                <span class="input-group-btn">
-                                                    <button type="button" ng-click="formWizard.user.proID = '';formDemo.getCityList()" class="btn btn-default">
-                                                        <small>
-                                                            <i class="fa fa-trash"></i>
-                                                        </small>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                            <span ng-show="formWizard.form.province.$dirty && formWizard.form.province.$error.required" class="text-danger">省份<span class="text-danger">不能为空</span></span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">字典控件，只显示50，<span class="text-danger">不能为空</span></small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">市</label>
-                                        <div class="col-sm-6">
-                                            <div class="input-group">
-                                                <ui-select ng-model="formWizard.user.cityID" name="city" theme="bootstrap" class="text-left" required="" on-select="formWizard.getDistrictList()">
-                                                    <ui-select-match placeholder="城市">{{$select.selected.name}}</ui-select-match>
-                                                    <ui-select-choices repeat="city.CityID as city in (formWizard.cityList | propsFilter:{name:$select.search, CityId:$select.search}) | limitTo: 50 | orderBy: 'CitySort'">
-                                                        <div ng-bind-html="city.name | highlight: $select.search"></div>
-                                                    </ui-select-choices>
-                                                </ui-select>
-                                                <span class="input-group-btn">
-                                                    <button type="button" ng-click="formWizard.user.cityID = '';formDemo.getDistrictList()" class="btn btn-default">
-                                                        <small>
-                                                            <i class="fa fa-trash"></i>
-                                                        </small>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                            <span ng-show="formWizard.form.city.$dirty && formWizard.form.city.$error.required" class="text-danger">城市<span class="text-danger">不能为空</span></span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">字典控件，只显示50，<span class="text-danger">不能为空</span></small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">区/县</label>
-                                        <div class="col-sm-6">
-                                            <div class="input-group">
-                                                <ui-select ng-model="formWizard.user.districtID" name="district" theme="bootstrap" class="text-left" required="">
-                                                    <ui-select-match placeholder="区/县">{{$select.selected.DisName}}</ui-select-match>
-                                                    <ui-select-choices repeat="district.Id as district in (formWizard.districtList | propsFilter:{Disname:$select.search, ProId:$select.search, Id:$select.search}) | limitTo: 50">
-                                                        <div ng-bind-html="district.DisName | highlight: $select.search"></div>
-                                                    </ui-select-choices>
-                                                </ui-select>
-                                                <span class="input-group-btn">
-                                                    <button type="button" ng-click="formWizard.user.districtID = ''" class="btn btn-default">
-                                                        <small>
-                                                            <i class="fa fa-trash"></i>
-                                                        </small>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                            <span ng-show="formWizard.form.district.$dirty && formWizard.form.district.$error.required" class="text-danger">区/县<span class="text-danger">不能为空</span></span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <small class="text-muted">字典控件，只显示50</small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            <ul class="pager">
-                                    <li class="previous">
-                                        <a ng-click="wizard.go(2)">
-                                            <em class="fa fa-chevron-left">
-                                                上一步</em>
-                                        </a>
-                                    </li>
-                                    <li class="pull-right">
-                                        <button type="submit" class="btn btn-primary">
-                                            <em class="fa fa-save"></em>&ensp;提交</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>

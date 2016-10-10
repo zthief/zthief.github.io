@@ -25,9 +25,9 @@
                 }
             }
 
-            if (typeof(toState) !== 'undefined') {
-                $templateCache.remove(toState.templateUrl);
-            }
+            // if (typeof(toState) !== 'undefined') {
+            //     $templateCache.remove(toState.templateUrl);
+            // }
 
             /*解除以下注释可以使用登录验证*/
             var currentUser = $localStorage.currentUser;

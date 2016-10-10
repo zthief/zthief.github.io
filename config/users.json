@@ -1,0 +1,41 @@
+[{
+    "name": "zthief",
+    "email": "zthief@163.com",
+    "salary": 9000,
+    "sex": "male",
+    "status": "enabled",
+    "proID": 19,
+    "cityID": 190,
+    "districtID": 1673,
+    "favors": [
+        "1",
+        "2",
+        "3"
+    ]
+},{
+    "name": "zthief1991",
+    "email": "zthief1991@163.com",
+    "salary": 9000,
+    "sex": "female",
+    "status": "disabled",
+    "proID": 19,
+    "cityID": 190,
+    "districtID": 1673,
+    "favors": [
+        "2",
+        "3"
+    ]
+},{
+    "name": "zthiefxx",
+    "email": "zthiefxx@163.com",
+    "salary": 1000,
+    "sex": "male",
+    "status": "enabled",
+    "proID": 19,
+    "cityID": 190,
+    "districtID": 1673,
+    "favors": [
+        "1",
+        "2"
+    ]
+}]

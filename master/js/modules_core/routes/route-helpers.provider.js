@@ -9,19 +9,21 @@
 
     function RouteHelpersProvider(APP_REQUIRES) {
         return {
-            basepath: basepath,
+            versionStamp: '',
+            setVersionStamp: function(value) {
+                this.versionStamp = value;
+            },
+            basepath: function(uri) {
+                return 'app/views/' + uri + '?versionStamp=' + this.versionStamp;
+            },
             resolveFor: resolveFor,
             $get: function() {
                 return {
-                    basepath: basepath,
+                    basepath: this.basepath,
                     resolveFor: resolveFor
                 };
             }
         };
-
-        function basepath(uri) {
-            return 'app/views/' + uri;
-        }
 
         function resolveFor() {
             var _args = arguments;
