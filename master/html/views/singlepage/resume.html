@@ -91,8 +91,7 @@
             <div class="col-md-2">
                 <h2>工作经历</h2>
             </div>
-            <hr class="minhr" ng-repeat-start="item in resume.data.works" ng-if="$index > 0"/>
-            <div class="col-md-8" ng-class="{'col-md-offset-2': $index > 0}">
+            <div class="col-md-8" ng-repeat-start="item in resume.data.works" ng-class="{'col-md-offset-2': $index > 0}">
                 <h3>{{item.company}}<br/>
                     <small>{{item.position}}</small>
                 </h3>
@@ -111,8 +110,7 @@
             <div class="col-md-2">
                 <h2>项目经验</h2>
             </div>
-            <hr class="minhr" ng-repeat-start="item in resume.data.projects" ng-if="$index > 0"/>
-            <div class="col-md-8" ng-class="{'col-md-offset-2': $index > 0}">
+            <div class="col-md-8" ng-repeat-start="item in resume.data.projects" ng-class="{'col-md-offset-2': $index > 0}">
                 <h3>{{item.name}}</h3>
                 <p>
                     <b>项目描述：</b><br/>
